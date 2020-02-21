@@ -1,9 +1,15 @@
 console.log('it works!!!!');
-function openCity(cityName) {
-  let i;
-  const x = document.getElementsByClassName('city');
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = 'none';
+
+const navButtons = document.querySelectorAll('.nav-button');
+
+function openContentOption(option) {
+  // let i;
+  const options = document.querySelectorAll('.content-option');
+  for (i = 0; i < options.length; i++) {
+    options[i].style.display = 'none';
   }
-  document.getElementById(cityName).style.display = 'block';
+  // document.getElementById(option).style.display = 'block';
 }
+navButtons.forEach(function(button) {
+  button.addEventListener('click', openContentOption);
+});
