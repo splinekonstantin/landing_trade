@@ -10,45 +10,65 @@
 </head>
 
 <body>
-    <header>
+    <header class="hide-mobile">
         <div class="header-content-wrapper">
             <h1>Выберите способ заработка</h1>
             <!-- <div class="header-options"> -->
-            <ul>
-                <li class="header-option active">
-                    <img src="./assets/icons/icon_trade.svg" alt="computer icon" class="ico">
-                    <h3>Торговать</h3>
-                </li>
-                <li class="header-option">
-                    <img src="./assets/icons/icon_case.svg" alt="computer icon" class="ico">
-                    <h3>Инвестировать</h3>
-                </li>
-                <li class="header-option">
-                    <img src="./assets/icons/icon_man.svg" alt="computer icon" class="ico">
-                    <h3>Привлекать инвестора</h3>
-                </li>
-            </ul>
+            <div role="tablist">
+                <button role="tab" aria-selected="true" data-id="trade" class="header-option">
+                    <div>
+                        <img src="./assets/icons/icon_trade.svg" alt="computer icon" class="ico">
+                        <h3>Торговать</h3>
+                    </div>
+                </button>
+                <button role="tab" aria-selected="false" data-id="invest" class="header-option">
+                    <div>
+                        <img src="./assets/icons/icon_case.svg" alt="case icon" class="ico">
+                        <h3>Инвестировать</h3>
+                    </div>
+                </button>
+                <button role="tab" aria-selected="false" data-id="attract" class="header-option">
+                    <div>
+                        <img src="./assets/icons/icon_man.svg" alt="man icon" class="ico">
+                        <h3>Привлекать инвестора</h3>
+                    </div>
+                </button>
+            </div>
             <!-- </div> -->
         </div>
     </header>
 
 
     <main>
-        <div class="nav-wrapper">
-            <nav>
-                <div class="nav-button active2">
-                    <h3>Торговать</h3>
-                </div>
-                <div class="nav-button">
-                    <h3>Инвестировать</h3>
-                </div>
-                <div class="nav-button">
-                    <h3>Привлекать инвестора</h3>
-                </div>
-            </nav>
+        <div class="tablist-wrapper">
+
+            <div role="tablist" aria-label="options">
+                <h1 class="hide-desktop">Выберите способ заработка</h1>
+                <button role="tab" aria-selected="true" data-id="trade" class="nav-button selected">
+                    <div>
+                        <img src="./assets/icons/icon_trade.svg" alt="computer icon" class="ico hide-desktop">
+                        <h3>Торговать</h3>
+                    </div>
+                    <img src="./assets/icons/arrow.svg" alt="arrow" class="hide-desktop">
+                </button>
+                <button role="tab" aria-selected="false" data-id="invest" class="nav-button">
+                    <div>
+                        <img src="./assets/icons/icon_case.svg" alt="case icon" class="ico hide-desktop">
+                        <h3>Инвестировать</h3>
+                    </div>
+                    <img src="./assets/icons/arrow.svg" alt="arrow" class="hide-desktop">
+                </button>
+                <button role="tab" aria-selected="false" data-id="attract" class="nav-button">
+                    <div>
+                        <img src="./assets/icons/icon_man.svg" alt="man icon" class="ico hide-desktop">
+                        <h3>Привлекать инвестора</h3>
+                    </div>
+                    <img src="./assets/icons/arrow.svg" alt="arrow" class="hide-desktop">
+                </button>
+            </div>
         </div>
         <section class="main-content">
-            <div id="trade" class="content-option">
+            <div role="tabpanel" aria-labelledby="trade" class="content-option">
                 <p>Если вы ищете пассивный доход и предпочитаете, чтобы деньги для вас зарабатывал тот, кто
                     умеет это делать, тогда попробуйте ЛАММ. ЛАММ – это сервис копирования сделок успешных
                     трейдеров. Доходность ни чем не ограничена!</p>
@@ -63,9 +83,10 @@
                     <li class="main-item">Вы можете подключиться к нескольким Управляющим одновременно.</li>
                     <li class="main-item">Вы можете отключиться от Управляющих в любой момент.</li>
                 </ul>
+                <button class="cta">Продолжить</button>
             </div>
 
-            <div id="invest" class="content-option" style="display:none">
+            <div role="tabpanel" aria-labelledby="invest" class="content-option" hidden>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt fugiat magnam cupiditate
                     incidunt architecto nemo, ullam minima tempore, sequi odit asperiores obcaecati. Qui ratione
                     ut
@@ -80,9 +101,10 @@
                         остаются на Вашем счете.</li>
                     <li class="main-item">Вы можете подключиться к нескольким Управляющим одновременно.</li>
                 </ul>
+                <button class="cta">Продолжить</button>
             </div>
 
-            <div id="attract" class="content-option" style="display:none">
+            <div role="tabpanel" aria-labelledby="attract" class="content-option" hidden>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate, iure at molestias culpa
                     eum
                     ratione! Mollitia fugiat neque eligendi nihil, enim molestiae modi amet ex ut eum asperiores
@@ -102,8 +124,8 @@
                     <li class="main-item">Вы можете отключиться от Управляющих в любой момент.</li>
 
                 </ul>
+                <button class="cta">Продолжить</button>
             </div>
-            <button class="cta">Продолжить</button>
         </section>
     </main>
     <script src="script.js"></script>
